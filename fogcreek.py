@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
 
+"""My solution to a challenge by Fogcreek."""
+
 from __future__ import print_function
 
 import argparse
@@ -17,8 +19,8 @@ def trim_after_underscore(s):
 def widest_leftmost_pair(s):
     """Return the indices of the widest, leftmost pair, or None.
 
-    This is the core of the algorithm. We call 'pair' a pair of equal
-    characters with no pairs of equal characters between them.
+    This is the core of the algorithm. We call 'pair' two equal characters with
+    no equal characters between them.
 
     We mantain two indices, i and j, which are pointing respectively to the
     start and the end of the current candidate pair. We also mantain a
@@ -94,7 +96,7 @@ def widest_leftmost_pair(s):
                 pairs.append((i, j))
 
                 i = seen[s[j]]
-                j = i+1
+                j = i + 1
 
                 seen = {}
                 first = s[i]
